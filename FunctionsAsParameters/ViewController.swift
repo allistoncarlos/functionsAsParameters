@@ -12,14 +12,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Seria interessante exibir aqui um loading, indicando uma operação em andamento
+        
+        Service().get(success: success, failure: failure);
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func success() -> [NSObject] {
+        // Aqui o loading poderia ser oculto, indicando que a operação chegou ao fim;
+        
+        // Mostrar os dados retornados na tela
+        
+        return [NSObject]();
     }
-
-
+    
+    func failure() -> NSError {
+        // Aqui o loading poderia ser oculto, indicando que a operação chegou ao fim;
+        
+        // Mostrar um indicativo de falha na busca dos dados
+        
+        return NSError();
+    }
 }
 
